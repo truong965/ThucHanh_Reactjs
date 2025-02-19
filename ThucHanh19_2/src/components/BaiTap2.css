@@ -1,0 +1,75 @@
+.bai-tap-2-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 20px auto;
+}
+
+.bai-tap-2-container h1 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 10px;
+}
+
+.bai-tap-2-container input[type="text"] {
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+      width: calc(100% - 20px);
+      box-sizing: border-box;
+}
+
+.bai-tap-2-container .button-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+}
+
+.bai-tap-2-container button {
+      padding: 8px 12px;
+      font-size: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+.bai-tap-2-container button:hover {
+      background-color: #45a049;
+}
+
+.bai-tap-2-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+}
+
+.bai-tap-2-container li {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 8px;
+}
+
+.bai-tap-2-container input[type="checkbox"] {
+      margin-right: 10px;
+}
+
+.bai-tap-2-container span {
+      font-size: 1rem;
+      color: #333;
+}

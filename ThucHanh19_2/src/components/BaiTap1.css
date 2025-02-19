@@ -1,0 +1,50 @@
+/* Only apply styles inside the BaiTap1 container */
+.bai-tap-1-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: Arial, sans-serif;
+}
+
+.bai-tap-1-container h1 {
+      font-size: 1.2rem;
+      margin-right: 20px;
+      color: #333;
+}
+
+.bai-tap-1-container input[type="number"],
+.bai-tap-1-container select {
+      padding: 5px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 80px;
+}
+
+.bai-tap-1-container button {
+      padding: 8px 12px;
+      font-size: 1rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+}
+
+.bai-tap-1-container button:hover {
+      background-color: #45a049;
+}
+
+.bai-tap-1-container p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: 20px;
+      color: #333;
+      display: inline-block;
+}
