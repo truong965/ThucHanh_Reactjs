@@ -1,0 +1,43 @@
+.range-slider {
+      position: relative;
+      height: 30px;
+      width: 100%;
+}
+
+.range-input {
+      position: absolute;
+      width: 100%;
+      background: transparent;
+      pointer-events: none;
+      /* Chỉ cho phép thao tác trên thumb */
+      -webkit-appearance: none;
+      appearance: none;
+}
+
+.range-input::-webkit-slider-runnable-track {
+      height: 8px;
+      background: transparent;
+}
+
+.range-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: red;
+      border-radius: 50%;
+      cursor: pointer;
+      pointer-events: auto;
+      /* Cho phép kéo nút */
+      position: relative;
+      z-index: 3;
+}
+
+.range-track {
+      position: absolute;
+      top: 40%;
+      height: 8px;
+      background: red;
+      border-radius: 5px;
+      transform: translateY(-50%);
+      z-index: 2;
+}

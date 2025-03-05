@@ -1,0 +1,15 @@
+.header .list-group-item a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+}
+
+.header a:hover {
+      color: #ff6600;
+}
+
+.header .list-group-item {
+      border: none;
+}

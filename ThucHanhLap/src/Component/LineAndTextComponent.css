@@ -1,0 +1,14 @@
+.cusHr {
+      flex: 1;
+      /* Cho phép đường kẻ mở rộng */
+      height: 2px;
+      /* Độ dày của đường */
+      background-color: black;
+      /* Màu của đường */
+      border: none;
+      /* Loại bỏ viền mặc định */
+      margin: 0;
+      /* Xóa khoảng cách thừa */
+      display: block;
+      /* Đảm bảo hiển thị đúng */
+}

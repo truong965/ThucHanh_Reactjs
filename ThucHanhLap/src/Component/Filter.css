@@ -1,0 +1,6 @@
+/* Màu khi chọn */
+.form-check-input:checked {
+      background-color: #f44b87;
+      /* Màu xanh lá */
+      border-color: #f44b87;
+}
