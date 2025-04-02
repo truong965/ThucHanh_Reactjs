@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './Component/Header'
 import HomePage from './GUI/HomePage'
@@ -7,7 +7,10 @@ import CookingGuide from './GUI/CookingGuide'
 import SearchPage from './GUI/SearchPage'
 import YourRecipeBox from './GUI/YourRecipeBox'
 import Footer from './Component/Footer'
+import Lab_5 from './GUI/lab_05'
 import './App.css'
+import "tailwindcss";
+
 function App() {
   return (
     <>
@@ -19,6 +22,7 @@ function App() {
           <Route path="/yourRecipeBox" element={<YourRecipeBox />}></Route>
           <Route path="/Recipes/Subscribe" element={<SubscribePage />}></Route>
           <Route path="/CookingGuide" element={<CookingGuide />}></Route>
+          <Route path="/Lab_05" element={<Lab_5 />}></Route>
         </Routes>
         <Footer />
       </Router>
