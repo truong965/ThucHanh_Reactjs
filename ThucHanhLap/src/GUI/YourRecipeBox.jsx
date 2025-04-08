@@ -1,23 +1,17 @@
-import React from 'react';
+import { React, useState, useRef } from 'react';
 import CusButton from '../Component/CusButton';
 import CusTabs from '../Component/CusTabs';
-import SavedRecipes from '../Component/SavedRecipes';
+import RecipesItem from '../Component/RecipesItem';
 import { SavedRecipesData, getFormatTime } from '../Data/SaveRecipesData';
+import Pagination from '../Component/Pagination';
 const YourRecipeBox = () => {
+      const itemsPerPage = 8;
       const [currentPage, setCurrentPage] = useState(1);
 
       // Tính tổng số trang
-      const totalPages = Math.ceil(SavedRecipesData.length / itemsPerPage);
-
       // Xác định phần tử hiển thị dựa vào trang hiện tại
-      const indexOfLastItem = currentPage * itemsPerPage;
-      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-      const currentItems = SavedRecipesData.slice(indexOfFirstItem, indexOfLastItem);
-
-      // Xử lý khi bấm vào số trang
-      const handlePageChange = (page) => {
-            setCurrentPage(page);
-      };
+      const totalPages = Math.ceil(SavedRecipesData.length / itemsPerPage);
+      const currentItems = SavedRecipesData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
       const tabsPage = [
             { name: 'Saved Recipes', href: '#', isActive: true },
             { name: 'Folder', href: '#', isActive: false },
@@ -38,39 +32,18 @@ const YourRecipeBox = () => {
                   </div>
                   <CusTabs childrens={tabsPage} />
                   <div className='row'>
-                        {SavedRecipesData.map((item, index) => {
-                              return (<SavedRecipes key={index} imgRecipes={item.imgRecipes} nameRecipes={item.nameRecipes} time={getFormatTime(item.time)} />)
+                        {currentItems.map((item, index) => {
+                              return (<RecipesItem key={index} imgRecipes={item.imgRecipes} nameRecipes={item.nameRecipes} time={getFormatTime(item.time)} />)
                         })}
                   </div>
                   <div className='d-flex justify-content-end w-100 mt-3'>
-                        <nav aria-label="Page navigation example">
-                              <ul className="pagination">
-                                    {/* Nút Previous */}
-                                    <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
-                                          <button className="page-link" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                                                &laquo;
-                                          </button>
-                                    </li>
-
-                                    {/* Hiển thị danh sách số trang */}
-                                    {Array.from({ length: totalPages }, (_, i) => (
-                                          <li key={i} className={`page-item ${currentPage === i + 1 ? "active" : ""}`}>
-                                                <button className="page-link" onClick={() => handlePageChange(i + 1)}>
-                                                      {i + 1}
-                                                </button>
-                                          </li>
-                                    ))}
-
-                                    {/* Nút Next */}
-                                    <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
-                                          <button className="page-link" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-                                                &raquo;
-                                          </button>
-                                    </li>
-                              </ul>
-                        </nav>
+                        <Pagination
+                              currentPage={currentPage}
+                              totalPages={totalPages}
+                              onPageChange={setCurrentPage}
+                        />
                   </div>
             </div>
       );
 }
-export default YourRecipeBox;          
+export default YourRecipeBox;

@@ -7,11 +7,12 @@ import CookingGuide from './GUI/CookingGuide'
 import SearchPage from './GUI/SearchPage'
 import YourRecipeBox from './GUI/YourRecipeBox'
 import Footer from './Component/Footer'
+import Ex1 from './GUI/ex1'
 import './App.css'
 function App() {
   return (
     <>
-      <Router>
+      {/* <Router>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
@@ -21,7 +22,8 @@ function App() {
           <Route path="/CookingGuide" element={<CookingGuide />}></Route>
         </Routes>
         <Footer />
-      </Router>
+      </Router> */}
+      <Ex1></Ex1>
     </>
   )
 }

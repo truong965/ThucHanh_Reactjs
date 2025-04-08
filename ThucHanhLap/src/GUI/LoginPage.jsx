@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useRef } from "react";
 import 'font-awesome/css/font-awesome.min.css';
 
 import CusButton from "../Component/CusButton";
@@ -7,9 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import LineAndTextComponent from "../Component/LineAndTextComponent";
 import './LoginPage.css';
+import { data } from "react-router-dom";
 const LoginPage = (props) => {
+      const inputRef = useRef(null);
       const handleNextButton = () => {
-            console.log("Next button clicked");
+            if (inputRef.current.value.trim() !== "") {
+                  localStorage.setItem("dataLogin", JSON.stringify(inputRef.current.value));
+                  window.location.reload();
+            }
       }
       return (
             <div className="modal fade" id="loginModal" tabIndex="-1" aria-labelledby="loginModalLabel">
@@ -25,7 +30,7 @@ const LoginPage = (props) => {
                               </div>
                               <div className="mx-3 modal-body">
                                     <h5 className="my-3 fw-normal text-start">Enter your email to login</h5>
-                                    <input style={{ backgroundColor: "#f3f4f6" }} className="w-100 border border-2 py-2 rounded-3" type="text" placeholder=" enter your email" />
+                                    <input ref={inputRef} style={{ backgroundColor: "#f3f4f6", color: "#000000" }} className="w-100 border border-2 py-2 rounded-3" type="text" placeholder=" enter your email" />
                                     <CusButton clsName="btn px-5 my-4 w-100" backgroundColor={mainColor} textColor="#ffffff" onClick={handleNextButton}>Continue</CusButton>
                                     <LineAndTextComponent className="my-3" content="OR" ></LineAndTextComponent>
                                     <p className="text-black-50">By continuing, you agree to the updated <b>Terms of Sale, Terms of Service,</b> and <b>Privacy Policy.</b></p>

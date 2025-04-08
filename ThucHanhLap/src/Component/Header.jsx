@@ -7,7 +7,6 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.min.js';
 const dataLogin = JSON.parse(localStorage.getItem('dataLogin')) || null;
 
 const handleLogin = () => {
-      console.log("Login button clicked");
       const modalElement = document.getElementById("loginModal");
       if (modalElement) {
             const modal = new bootstrap.Modal(modalElement);
@@ -19,7 +18,6 @@ const handleLogin = () => {
             };
       }
 }
-
 const Header = (props) => {
       const navigate = useNavigate();
       const inputRef = useRef(null);
@@ -80,3 +78,4 @@ const Header = (props) => {
       );
 }
 export default Header;
+export { handleLogin };

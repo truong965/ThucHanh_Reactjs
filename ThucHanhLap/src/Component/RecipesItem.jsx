@@ -1,9 +1,8 @@
 import React from 'react';
 
-const SavedRecipes = (props) => {
-
+const RecipesItem = (props) => {
       return (
-            <div className={props.className == "" ? "col-3 col-md-4 col-lg-3 p-0 mb-3" : props.className} style={{ borderColor: "#f44b87" }}>
+            <div className={!props.className ? "col-3 col-md-4 col-lg-3 p-0 mb-3" : props.className} style={{ borderColor: "#f44b87" }}>
                   <div className='m-2 border-2 rounded-3 shadow d-flex flex-column align-items-start h-100'>
                         <img style={{ width: "100%", objectFit: "contain" }} src={props.imgRecipes} alt="" />
                         <div className='d-flex justify-content-between align-items-start w-100'>
@@ -25,4 +24,4 @@ const SavedRecipes = (props) => {
             </div>
       )
 }
-export default SavedRecipes;
+export default RecipesItem;
