@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import React,{useEffect } from 'react'
 import DiscoverPage from './DiscoverPage'
 
 const HomePage = () => {

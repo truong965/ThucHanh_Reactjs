@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { CarouselDiscover } from '../Component/CarouselDiscover';
 import CusButton from '../Component/CusButton';
 import { mainColor } from '../FEData/colorData';
