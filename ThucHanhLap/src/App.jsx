@@ -8,14 +8,13 @@ import SearchPage from './GUI/SearchPage'
 import YourRecipeBox from './GUI/YourRecipeBox'
 import Footer from './Component/Footer'
 import Lab_5 from './GUI/lab_05'
-import Ex1 from './GUI/ex1'
+import { Dashboard, Project, Theme, Analytics, Messages, Integrations } from './GUI/lab_05'
+// import Ex1 from './GUI/ex1'
 import './App.css'
-import "tailwindcss";
-
 function App() {
   return (
     <>
-      {/* <Router>
+      <Router>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
@@ -23,11 +22,20 @@ function App() {
           <Route path="/yourRecipeBox" element={<YourRecipeBox />}></Route>
           <Route path="/Recipes/Subscribe" element={<SubscribePage />}></Route>
           <Route path="/CookingGuide" element={<CookingGuide />}></Route>
-          <Route path="/Lab_05" element={<Lab_5 />}></Route>
+          <Route path="/Lab_05" element={<Lab_5 />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="project" element={<Project />} />
+            <Route path="theme" element={<Theme />} />
+            <Route path="analytics" element={<Analytics />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="integrations" element={<Integrations />} />
+          </Route>
+
+          {/* <Route path="/ex1" element={<Ex1 />}></Route> */}
         </Routes>
         <Footer />
-      </Router> */}
-      <Ex1></Ex1>
+      </Router>
+      {/* <Ex1></Ex1> */}
     </>
   )
 }

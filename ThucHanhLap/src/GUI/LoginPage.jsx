@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import React, { useRef } from "react";
 import 'font-awesome/css/font-awesome.min.css';
 
 import CusButton from "../Component/CusButton";
